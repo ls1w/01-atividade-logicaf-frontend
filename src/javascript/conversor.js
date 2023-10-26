@@ -1,21 +1,24 @@
-let converter = '';
+let conversor = '';
 let temperatura;
 let resultado;
 
 function limpar(){
     document.querySelector('#temperatura').value = '';
     document.querySelector('#resultado').innerHTML = '-';
-    document.querySelector('#converter').value = '';
+    document.querySelector('#conversor').value = '';
 }
 
-function conversor(){
-    converter = document.querySelector('#converter').value;
+function converter(){
+    conversor = document.querySelector('#conversor').value;
 
-    if (converter == 'Celsius') {
+    if (conversor == 'Celsius') {
         converterCelsius();
     }
-    if (converter == 'Fahrenheit') {
+    if (conversor == 'Fahrenheit') {
         converterFahrenheit();
+    }
+    if (conversor == ''){
+        alert('')
     }
 }
 
