@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <title>CONVERSOR Cº Fº</title>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="row justify-content-center align-items-center vh-100">
+            <div class="col-auto bg-secondary p-5 rounded">
+                <h3 class="text-light fw-bold">
+                    CONVERSOR
+                </h3>
+                <form onsubmit="return false">
+
+                    <!-- INPUT TEMPERATURA -->
+                    <div class="row">
+                        <div class="col">
+                            <label for="temperatura" class="form-lable fw-bold text-light"  >Temperatura</label>
+                            <input type="number" name="temperatura" id="temperatura" class="form-control" placeholder="Insira um número: ">
+                        </div>
+                    </div>
+
+                    <!-- Cº OU Fº -->
+                    <div class="row">
+                        <div class="col">
+                            <label for="converter" class="form-lable fw-bold text-light">Converter para</label>
+                            <select name="converter" id="converter" class="form-select">
+                                <option value="">Selecione: </option>
+                                <option value="Celsius">Celsius</option>
+                                <option value="Fahrenheit">Fahrenheit</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- RESULTADO -->
+                    <div class="row">
+                        <!-- LABEL RESULTADO -->
+                        <div class="col">
+                            <label class="form-label fw-bold text-light">RESULTADO: </label>
+                        </div>
+                        <div class="col">
+                            <label class="form-label fw-bold text-light" id="resultado">-</label>
+                        </div>
+                    </div>
+
+                    <!-- BOTÃO CALCULAR E LIMPAR -->
+                    <div class="row">
+                        <!-- BOTÃO CALCULAR -->
+                        <div class="col">
+                            <button class="btn btn-primary mt-2" name="btn-calcula" id="btn-calcular" onclick="conversor()">
+                                CALCULAR
+                            </button>
+                        </div>
+
+                        <!-- BOTÃO LIMPAR -->
+                        <div class="col">
+                            <button class="btn btn-danger mt-2" name="btn-limpar" id="btn-limpar" onclick="limpar()">
+                                LIMPAR
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+<script src="./javascript/conversor.js"></script>
+
+</html>
