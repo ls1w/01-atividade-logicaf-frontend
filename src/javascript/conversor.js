@@ -10,30 +10,45 @@ function limpar(){
 
 function converter(){
     conversor = document.querySelector('#conversor').value;
+    temperatura = document.querySelector('#temperatura').value;
 
-    if (conversor == 'Celsius') {
-        converterCelsius();
-    }
-    if (conversor == 'Fahrenheit') {
-        converterFahrenheit();
-    }
-    if (conversor == ''){
-        alert('')
+    if (temperatura === ''){
+        alert('Digite um valor');
+        document.querySelector('#temperatura').focus();
+        return false;
+    } else{
+        if (conversor == 'Celsius') {
+            validation = converterParaFahrenheit(parseInt(temperatura));
+            return validation;
+        }
+        if (conversor == 'Fahrenheit') {
+            validation = converterParaCelsius(parseInt(temperatura));
+            return validation;
+        }
+        if (conversor == ''){
+            alert('Selecione se vai converter para celcius ou fahrenheit');
+            document.querySelector('#conversor').focus();
+            return false;
+        }
     }
 }
 
-function converterCelsius(){
-    temperatura = parseInt(document.querySelector('#temperatura').value);
+function converterParaCelsius(temperatura){
+    // temperatura = parseInt(document.querySelector('#temperatura').value);
+    let temperaturaF = temperatura;
 
-    resultado = ((temperatura * 1.8) + 32)
+    resultado = ((temperaturaF * 1.8) + 32);
 
-    document.querySelector('#resultado').innerHTML = resultado
+    document.querySelector('#resultado').innerHTML = (resultado.toFixed(1) + ' ºF');
+    return true;
 }
 
-function converterFahrenheit(){
-    temperatura = parseInt(document.querySelector('#temperatura').value);
+function converterParaFahrenheit(temperatura){
+    // temperatura = parseInt(document.querySelector('#temperatura').value);
+    let temperaturaC = temperatura;
 
-    resultado = ((temperatura - 32) / 1.8)
+    resultado = ((temperaturaC - 32) / 1.8);
 
-    document.querySelector('#resultado').innerHTML = resultado
+    document.querySelector('#resultado').innerHTML = (resultado.toFixed(1) + ' ºC');
+    return true
 }
